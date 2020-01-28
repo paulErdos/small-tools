@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Ensure the user knows how to use
+if [ $# -ne 2 ]; then
+    echo 'usage: new-script interpreter name'
+    exit 1
+fi
+
+# Make sure the file doesn't already exist
+if [ -e $2 ]; then
+    echo 'Halting: file "'$2'" exists.'
+    exit 2
+fi
+
+# Attempt to ensure valid interpreter
+# For now let's make sure we get at least non-empty response from which
+if [ ! $(which $1) ]; then
+    echo 'Halting: interpreter "'$1'" may not exist'
+    exit 3
+fi
+
+printf '#!'$(which $1)"\n\n\n" > $2 && chmod 744 $2
