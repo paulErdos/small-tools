@@ -6,3 +6,4 @@ git config user.email "vincesteffens@gmail.com"
 # Verify by cat .git/config
 
 # Q: Does this need to be sourced?
+# A: no.
