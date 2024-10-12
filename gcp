@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$#" -eq 0 ]; then
+    echo 'usage: gcp "message"'
+fi
+
+
+git commit -m "$1" && git push
+
