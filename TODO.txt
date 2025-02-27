@@ -1,0 +1,1 @@
+Setup.sh: check if in-path is in $PATH, add to ~/.bashrc; define, export, source ~/.bashrc;

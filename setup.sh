@@ -23,3 +23,5 @@ if [ ! -d in-path ]; then
 fi
 
 cp $1 in-path
+echo $PATH | sed s,:,n,g | grep "$(pwd)"
+cat ~/.bashrc | grep "$(pwd)"
