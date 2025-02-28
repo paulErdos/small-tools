@@ -1,3 +1,4 @@
 #!/bin/bash
 
+date
 upower -d | egrep -i '%|dev.*BAT|volt|time|state|full|rate' | sed 's,\([^ ]*\) [^_]*_\(.*\)$,\1 \2,'
