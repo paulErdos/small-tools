@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+if [ $(/home/vincent/Repositories/deployments-status) -eq 1 ]; then
+    echo 1
+    echo "Deployments observed to be up"
+    exit 1
+fi
+
+# 1
+cd /home/vincent/Repositories/project-library-client/ && npm run dev &
+
+
+# 2
+cd /home/vincent/Repositories/Practice-Prototypes/Prototypes/nutritionFacts/ && ./nf-run &
+
+

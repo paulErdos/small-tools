@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+
+# Set ip and port for deployments each on their own line in file 'deployments' in this directory.
+
+expected=$'HTTP/1.1 200 OK'
+
+for deployment in $(cat ~/Repositories/deployments); do
+    response="$(curl -I $deployment 2>&1 | grep -i http)"
+
+    if [ "$response" != "$expected" ]; then
+        echo 0
+        exit
+    fi
+done
+
+echo 1
+
+
+#if [ $(ps aux | grep vince | grep Repo | egrep -v grep | sed 's,vincent *\([^ ]*\) *.*$,\1,' | wc -l ) -eq $n_deployments ]; then
+#    echo 1
+#else
+#    echo 0
+#fi
+#
+#HTTP/1.1 200 OK
+#curl -I 192.168.0.3:3000 2>&1 | grep -i http >> deployments-status 
+#HTTP/1.1 200 OK
+#HTTP/1.1 200 OK
+#HTTP/1.1 200 OK
+#HTTP/1.1 200 OK
+
+
+# Neat stuff learned.
+#    diff <( echo "$response") <(echo "$expected")
+#    wc -c <(echo "$response")
+#    wc -c <(echo "$expected")
+#    echo $expected
