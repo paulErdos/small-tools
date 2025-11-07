@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Everything presently has ~/Repositories set up
+# We're manually cloning small-tools and running this script.
+[ $(pwd | grep small) ] && cd .. 
+
 # Clone standard repos 
 git clone git@github.com:paulErdos/Practice-Prototypes.git
 git clone git@github.com:paulErdos/NutritionFacts.git
