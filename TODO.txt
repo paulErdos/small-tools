@@ -1,1 +1,3 @@
 Setup.sh: check if in-path is in $PATH, add to ~/.bashrc; define, export, source ~/.bashrc;
+Setup.sh: check if in-path is in $PATH, add to ~/.bashrc; define, export, source ~/.bashrc;
+lol setup doesn't add in-path to path, it adds here. Which, great idea, here might be the place to have the ones I want to showcase
