@@ -2,6 +2,7 @@
 
 if [ "$#" -eq 0 ]; then
     echo 'usage: gcp "message"'
+    exit 1
 fi
 
 
