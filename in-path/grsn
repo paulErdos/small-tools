@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [ "$#" -eq 0 ]; then
+    echo 'Shortcut for: git restore --staged for all added new files'
+    echo 'usage: grsn [-c]'
+    echo 
+    echo 'grsn: print this manual'
+    echo 'grsn -c: execute action (c for confirm)'
+    exit 0
+fi
+
+git status | grep 'new file:' | awk '{ print $3 }'  | xargs git restore --staged
+
