@@ -16,3 +16,4 @@ else
 	gsettings set org.gnome.desktop.interface color-scheme prefer-light
 fi
 echo 'Done.'
+sleep 0.4  # Stylistic
